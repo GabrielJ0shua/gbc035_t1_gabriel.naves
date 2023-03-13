@@ -1,5 +1,9 @@
 package ex01;
 
+/**
+* @param arg
+*/
+
 public class HelloWorld{
 
     public static void main(String[] arg){
