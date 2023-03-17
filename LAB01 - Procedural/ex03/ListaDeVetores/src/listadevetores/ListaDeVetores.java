@@ -1,6 +1,7 @@
 package listadevetores;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -371,14 +372,91 @@ public class ListaDeVetores {
         for(int i : v) System.out.printf(" %d",i);
     }
     
-    public static void ex14() {}
+    public static void ex14() {
+        System.out.println("<< Universidade X >>");
+        
+        Scanner sc = new Scanner(System.in);
+        int[] num = new int[10000];
+        String[] classeSocial = new String[10000];
+        float[] CRA = new float[10000];
+        int qnt;
+        
+        System.out.println("Quantos alunos serão cadastrados:");
+        qnt = sc.nextInt();
+        
+        for(int i = 0; i < qnt; i++){
+            System.out.printf("\nEntre com o número do aluno: ");
+            num[i] = sc.nextInt();
+            System.out.printf("\nEntre com a classe social do aluno %d: ", num[i]);
+            classeSocial[i] = sc.next();
+            System.out.printf("\nEntre com o CRA do aluno %d: ", num[i]);
+            CRA[i] = sc.nextFloat();
+        }
+        
+        System.out.println("==== Alunos Cadastrados ====");
+        
+        for(int i = 0; i < qnt; i++){
+            System.out.println("Número: "+num[i]+" Classe Social: "+classeSocial[i]+" CRA: "+CRA[i]);
+        } 
+    }
     
-    public static void ex15() {}
+    public static void ex15() {
+        Scanner sc = new Scanner(System.in);
+        Integer[] v = new Integer[8];
+        
+        Integer[] resp;
+        
+        for(int i = 0; i < v.length; i++){
+            System.out.printf("\nEntre com o número %d: ", i+1);
+            v[i] = sc.nextInt();
+        }
+        
+        resp = verificaRepetidos(v);
+        
+        for(int i = 0; i < resp.length; i += 2) if(resp[i] != null ) System.out.println(resp[i]);
+    }
     
-    public static void ex16() {}
+    public static void ex16() {
+        Scanner sc = new Scanner(System.in);
+        Integer[] v = new Integer[8];
+        
+        Integer[] resp;
+        
+        for(int i = 0; i < v.length; i++){
+            System.out.printf("\nEntre com o número %d: ", i+1);
+            v[i] = sc.nextInt();
+        }
+        
+        resp = verificaRepetidos(v);
+        
+        for(Integer i : resp) if(i != null) System.out.println(i);
+    }
+    
+    public static Integer[] verificaRepetidos(Integer[] v){
+        Integer[] qnt = new Integer[v.length*2];
+        Integer[] aux = new Integer[2];
+        int aux2 = 0, aux3 = 0;
+        
+        for(int i = 0; i < v.length; i++){
+            for(int j = 0; j < v.length; j++){
+                if(Objects.equals(v[i], v[j]))
+                    aux2++;
+                if(aux2 > 1) 
+                    v[j] = null;
+            }
+            
+            qnt[aux3]  = v[i];
+            qnt[aux3 + 1]= aux2;
+            
+            aux3 +=2; 
+            aux2 = 0;
+            }
+        
+        return qnt;
+    }
     
     public static void main(String[] args) {
         System.out.println("Olá");
-        ex13();
+        ex16();
     }
 }
