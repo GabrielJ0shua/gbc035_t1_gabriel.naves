@@ -130,14 +130,14 @@ public class ListaDeVetores {
             System.out.printf("%d ",vet[i]);
         }
         
-        aux = media(vet);
+        aux = mediaExe06(vet);
         
         System.out.printf("\nO maior valor é: %d:\n",vet[(int) aux[0]]);
         System.out.printf("O menor valor é: %d:\n",vet[(int) aux[1]]);
         System.out.printf("A média valor é: %f:\n",aux[2]);
     }
     
-    public static float[] media(int[] vet){//result [0] é o indice do maior valor, [1] menor, [2] o valor da média
+    public static float[] mediaExe06(int[] vet){//result [0] é o indice do maior valor, [1] menor, [2] o valor da média
         float[] result = new float[3];  
         float media = 0, maior = 0, menor = 0;
         
@@ -227,16 +227,151 @@ public class ListaDeVetores {
     }
     
     public static void ex09() {
-    
+        
+        Scanner sc = new Scanner(System.in);
+        int[] alunos = new int[100];
+        float aux;
+        int qnt = 0;
+        
+        System.out.println("<< Média de n alunos. Máximo 100 alunos >>");
+        System.out.println("\nEntre com o número de alunos: ");
+        qnt = sc.nextInt();
+        
+        if(qnt > 100){
+            System.out.println("Erro, valor muito alto!");
+            System.out.println("\nEntre com o número de alunos: ");
+            qnt = sc.nextInt();
+        }
+        else{
+            for (int i = 0; i < qnt; i++){
+                System.out.printf("\nDigite a nota do aluno %d: ",i+1);
+                alunos[i] = sc.nextInt();
+            }
+        
+            System.out.println("\nRelatório de Notas\n");
+            for (int i = 0; i < qnt; i++)
+                System.out.printf("\nA nota do aluno %d é: %d",i+1, alunos[i]);
+        
+            aux = mediaEx09(alunos, qnt);
+            System.out.println("\nA média da turma é: "+aux);
+        }
+        
     }
     
-    public static void ex10() {}
+    public static float mediaEx09(int[] vet, int limit){
+        float result = 0;
+        
+        for(int j = 0; j < limit; j++) result += vet[j]; 
+        
+        result  /= limit;  
+        
+        return result;
+    }
     
-    public static void ex11() {}
+    public static void ex10() {
+        Scanner sc = new Scanner(System.in);
+        int[] A = new int[3], B = new int[3];
+        
+        System.out.println("<< Subtração de vetores >>");
+        
+        for(int i = 0; i < A.length; i++){
+            System.out.printf("\nDigite o valor %d de A: ",i+1);
+            A[i] = sc.nextInt();
+        }
+        
+        for(int i = 0; i < B.length; i++){
+            System.out.printf("\nDigite o valor %d de B: ",i+1);
+            B[i] = sc.nextInt();
+        }
+        
+        System.out.printf("O vetor C, definido como C = A-B é (");
+        
+        for(int i = 0; i < A.length; i++)
+            System.out.printf(" %d ",A[i]-B[i]);
+        
+        System.out.printf(")");
+    }
     
-    public static void ex12() {}
+    public static void ex11() {
+        Scanner sc = new Scanner(System.in);
+        int[] v = new int[5], v1 = new int[5], v2 = new int[5];
+        
+        System.out.println("<< Pares e Ímpares >>");
+        
+        for(int i = 0; i < v.length; i++){
+            System.out.printf("\nDigite o valor %d: ", i+1);
+            v[i] = sc.nextInt();
+        }
+        
+        for(int i = 0; i < v.length; i++)
+            if( v[i]%2 == 0) {
+                v2[i] = i;
+                v1[i] = -1;
+            }
+            else{
+                v1[i] = i;
+                v2[i] = -1;
+            }
+        
+        System.out.println("\nÍmpares: ");
+        for(int i : v1) if(i != -1) System.out.printf(" %d",i);
+        
+        System.out.println("\nPares: ");
+        for(int i : v2) if(i != -1) System.out.printf(" %d",i);
+            
+    }
     
-    public static void ex13() {}
+    public static void ex12() {
+        Scanner sc = new Scanner(System.in);
+        int[] cores = new int[4];
+        float[] aux;
+        String[] nomeCores = {"Verde", "Azul", "Amarela", "Vermelha"};
+        
+        System.out.println("<< Probabilidades >>");
+        System.out.println("\nDigite a quantidade de bolinhas\n");
+        
+        for(int i = 0; i < cores.length; i++){
+            System.out.println(nomeCores[i]+": ");
+            cores[i] = sc.nextInt();
+        }
+        
+        aux = probabilidades(cores);
+        
+        System.out.println("\nProbabilidades\n");
+        
+        for(int i = 0; i < nomeCores.length; i++)
+            System.out.printf("\n%s : %.2f",nomeCores[i],aux[i+1]);
+    }
+    
+    public static float[] probabilidades(int[] cores){
+        float[] calculo = new float[5];
+        calculo[0] = 0;
+        
+        for(int i : cores) calculo[0] += i;
+        
+        for(int i = 0; i < cores.length; i++)
+            calculo[i+1] = (cores[i]/calculo[0])*100;
+        
+        return calculo;
+    }
+    
+    public static void ex13() {
+        Scanner sc = new Scanner(System.in);
+        int[] v = new int[5];
+        
+        System.out.println("<< Zerando negativos >>");
+        
+        for(int i = 0; i < v.length; i++){
+            System.out.printf("\nEntre com o número %d: ", i+1);
+            v[i] = sc.nextInt();
+            if(v[i] < 0) v[i] = 0;
+        }
+        
+        System.out.printf("\nZerando os negativos, obtém-se: ");
+        for(int i : v) System.out.printf(" %d",i);
+    }
+    
+    public static void ex14() {}
     
     public static void ex15() {}
     
@@ -244,6 +379,6 @@ public class ListaDeVetores {
     
     public static void main(String[] args) {
         System.out.println("Olá");
-        ex08();
+        ex13();
     }
 }
