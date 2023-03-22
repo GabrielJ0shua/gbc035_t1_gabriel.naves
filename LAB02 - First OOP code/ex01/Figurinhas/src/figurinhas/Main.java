@@ -10,9 +10,12 @@ public class Main {
     public static void main(String[] args) {
         Figurinhas A,B,C;
         
-        A = new Figurinhas("Ronaldo", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
-        B = new Figurinhas("Neymar", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
-        C  = new Figurinhas("Socrates", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
+        A = new Figurinhas();
+        A.setInfoInit("Ronaldo", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
+        B = new Figurinhas();
+        B.setInfoInit("Neymar", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
+        C  = new Figurinhas();
+        C.setInfoInit("Socrates", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
         
         System.out.println(A.toString());
         System.out.println(B.toString());

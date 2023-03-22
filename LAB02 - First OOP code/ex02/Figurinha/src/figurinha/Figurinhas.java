@@ -9,7 +9,7 @@ public class Figurinhas {
     private String nomeDoJogador, dataDeNascimento, pais, posicao;
     private float altura, peso;
     
-    public Figurinhas(String nomeDoJogador, String dataDeNascimento, String pais, String posicao, float altura, float peso){
+    public void setInfoInit(String nomeDoJogador, String dataDeNascimento, String pais, String posicao, float altura, float peso){
         setNomeDoJogador(nomeDoJogador);
         setAltura(altura);
         setDataDeNascimento(dataDeNascimento);

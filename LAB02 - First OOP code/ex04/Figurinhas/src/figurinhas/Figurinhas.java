@@ -8,15 +8,6 @@ public class Figurinhas {
     //Nome do Jogador, Data de Nascimento, Altura, Peso, Posição, País
     private String nomeDoJogador, dataDeNascimento, pais, posicao;
     private float altura, peso;
-    
-    public Figurinhas(String nomeDoJogador, String dataDeNascimento, String pais, String posicao, float altura, float peso){
-        setNomeDoJogador(nomeDoJogador);
-        setAltura(altura);
-        setDataDeNascimento(dataDeNascimento);
-        setPais(pais);
-        setPeso(peso);
-        setPosicao(posicao);
-    }
 
     public String getNomeDoJogador() {
         return nomeDoJogador;
