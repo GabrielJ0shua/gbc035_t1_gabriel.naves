@@ -13,6 +13,12 @@ public class Selecao {
     private String nomeDoTecnico;
     private int numeroDeGolsDaSelecao;
 
+    public Selecao(Figurinhas[] Time, String nomeDoTecnico, int numeroDeGolsDaSelecao) {
+        setNomeDoTecnico(nomeDoTecnico);
+        setNumeroDeGolsDaSelecao(numeroDeGolsDaSelecao);
+        setTime(Time);
+    }
+
     public int getNumeroDeGolsDaSelecao() {
         return numeroDeGolsDaSelecao;
     }

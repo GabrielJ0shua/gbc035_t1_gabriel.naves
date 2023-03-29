@@ -9,7 +9,7 @@ public class Figurinhas {
     String nomeDoJogador, dataDeNascimento, pais, posicao;
     float altura, peso;
     
-    public void setInfoInit(String nomeDoJogador, String dataDeNascimento, String pais, String posicao, float altura, float peso){
+    public Figurinhas(String nomeDoJogador, String dataDeNascimento, String pais, String posicao, float altura, float peso){
         this.nomeDoJogador = nomeDoJogador;
         this.dataDeNascimento = dataDeNascimento;
         this.pais = pais;

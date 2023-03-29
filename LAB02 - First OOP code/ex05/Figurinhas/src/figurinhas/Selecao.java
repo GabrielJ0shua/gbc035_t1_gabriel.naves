@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package figurinhas;
 
 /**
@@ -5,14 +9,14 @@ package figurinhas;
  * @author Joshua
  */
 public class Selecao {
-    private Figurinhas[] time = null;
+    private Figurinhas[] Time = new Figurinhas[11];
     private String nomeDoTecnico;
     private int numeroDeGolsDaSelecao;
 
-    public Selecao( String nomeDoTecnico, int numeroDeGolsDaSelecao) {
+    public Selecao(Figurinhas[] Time, String nomeDoTecnico, int numeroDeGolsDaSelecao) {
         setNomeDoTecnico(nomeDoTecnico);
         setNumeroDeGolsDaSelecao(numeroDeGolsDaSelecao);
-        this.time = new Figurinhas[11];
+        setTime(Time);
     }
 
     public int getNumeroDeGolsDaSelecao() {
@@ -24,11 +28,11 @@ public class Selecao {
     }
 
     public Figurinhas[] getTime() {
-        return time;
+        return Time;
     }
 
     public void setTime(Figurinhas[] Time) {
-        this.time = Time;
+        this.Time = Time;
     }
 
     public String getNomeDoTecnico() {
@@ -41,7 +45,7 @@ public class Selecao {
 
     @Override
     public String toString() {
-        return "Selecao{" + "Time=" + time[0].toString()+ time[1].toString()+ time[2].toString()+ time[3].toString()+time[4].toString()+ time[5].toString()+ time[6].toString()+ time[7].toString() + time[8].toString()+ time[9].toString()+ time[10].toString() + ", nomeDoTecnico=" + nomeDoTecnico + ", numeroDeGolsDaSelecao=" + numeroDeGolsDaSelecao + '}';
+        return "Selecao{" + "Time=" + Time[0].toString()+ Time[1].toString()+ Time[2].toString()+ Time[3].toString()+Time[4].toString()+ Time[5].toString()+ Time[6].toString()+ Time[7].toString() + Time[8].toString()+ Time[9].toString()+ Time[10].toString() + ", nomeDoTecnico=" + nomeDoTecnico + ", numeroDeGolsDaSelecao=" + numeroDeGolsDaSelecao + '}';
     }
     
     
