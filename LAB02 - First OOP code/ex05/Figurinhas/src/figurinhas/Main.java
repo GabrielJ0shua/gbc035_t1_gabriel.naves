@@ -23,11 +23,20 @@ public class Main {
         A[9] = new Figurinhas("Ronaldo", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
         A[10] = new Figurinhas("Neymar", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
         
-        selecao[0] = new Selecao(A.clone(), "Jinx", 500);
+        selecao[0] = new Selecao("Jinx", 500);
+        selecao[0].setTime(A.clone());
         
         //________________________________________________________________
         
-        A[0] = new Figurinhas("Rogerio Skylab", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
+        A[0] = new Figurinhas( "Brasil");
+        A[0].setNomeDoJogador("Rogerio Skylab");
+        A[0].setDataDeNascimento("1/1/2000");
+        A[0].setPosicao("Atacante");
+        A[0].setAltura(1.83F);
+        A[0].setPeso(74F);
+
+
+
         A[1] = new Figurinhas("Ygao 3k", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
         A[2]  = new Figurinhas("Mano Brown", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
         A[3] = new Figurinhas("Samira", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
@@ -39,7 +48,8 @@ public class Main {
         A[9] = new Figurinhas("ET bilu", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
         A[10] = new Figurinhas("Totoro", "1/1/2000", "Brasil", "Atacante", 1.83F, 74F);
         
-        selecao[1] = new Selecao(A.clone(), "Caitlyn", 458);
+        selecao[1] = new Selecao( "Caitlyn", 458);
+        selecao[0].setTime(A.clone());
         
         for(Selecao i : selecao) System.out.println(i.toString());
     }

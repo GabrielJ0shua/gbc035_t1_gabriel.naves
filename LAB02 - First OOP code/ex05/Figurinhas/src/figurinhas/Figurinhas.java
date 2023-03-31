@@ -5,17 +5,17 @@ package figurinhas;
  * @author Joshua
  */
 public class Figurinhas {
-    //Nome do Jogador, Data de Nascimento, Altura, Peso, Posição, País
+
     private String nomeDoJogador, dataDeNascimento, pais, posicao;
     private float altura, peso;
-    
-    public Figurinhas(String nomeDoJogador, String dataDeNascimento, String pais, String posicao, float altura, float peso){
-        setNomeDoJogador(nomeDoJogador);
-        setAltura(altura);
-        setDataDeNascimento(dataDeNascimento);
+
+    public Figurinhas(String pais){
+        setNomeDoJogador("Calango");
+        setAltura(1.90F);
+        setDataDeNascimento("1/1/2000");
         setPais(pais);
-        setPeso(peso);
-        setPosicao(posicao);
+        setPeso(79F);
+        setPosicao("Zagueiro");
     }
 
     public String getNomeDoJogador() {
