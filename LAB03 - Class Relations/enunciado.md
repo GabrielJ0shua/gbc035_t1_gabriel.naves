@@ -7,11 +7,13 @@ Instruções:
 # Ex01 
 - Faça um pequeno programa que utiliza o conceito de Associação
 - os objetos são independentes?
+ Alguns sim, outros não.
 
 
 # Ex02
 - Faça um pequeno programa que utiliza o conceito de Agregação
 - os objetos são independentes?
+    Somente as clases base, a que ultilizamos na main, não.
 
 
 # Ex03
