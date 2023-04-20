@@ -5,7 +5,7 @@ package figurinhas;
  * @author Joshua
  */
 public class Figurinhas {
-    //Nome do Jogador, Data de Nascimento, Altura, Peso, Posição, País
+    //Nome do Jogador, Data de Nascimento, Altura, Peso, Posição, País, etc
     String nomeDoJogador, dataDeNascimento, pais, posicao;
     float altura, peso;
     
