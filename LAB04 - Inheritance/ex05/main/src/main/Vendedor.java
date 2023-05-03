@@ -5,7 +5,7 @@ package main;
  * @author Joshua
  */
 public class Vendedor extends Funcionario{
-    private float valorFixo, comissão, vendas;
+    private float valorFixo, comissao, vendas, folhaDePagamento;
     
     public Vendedor(String nome, String dataNascimento, float salario){
         super(nome, dataNascimento, salario);
@@ -19,12 +19,12 @@ public class Vendedor extends Funcionario{
         this.valorFixo = valorFixo;
     }
 
-    public float getComissão() {
-        return comissão;
+    public float getComissao() {
+        return comissao;
     }
 
     public void setComissão(float comissão) {
-        this.comissão = comissão;
+        this.comissao = comissão;
     }
 
     public float getVendas() {
@@ -33,5 +33,10 @@ public class Vendedor extends Funcionario{
 
     public void setVendas(float vendas) {
         this.vendas = vendas;
+    }
+    
+    public float calculaSalario(){
+        this.folhaDePagamento = super.getSalario() + this.getComissao() * this.getVendas();
+        return this.folhaDePagamento;
     }
 }

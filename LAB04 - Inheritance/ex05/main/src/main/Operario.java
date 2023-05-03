@@ -5,7 +5,7 @@ package main;
  * @author Joshua
  */
 public class Operario extends Funcionario{
-    private float valorPorProducao, quantidadeProduzida;
+    private float valorPorProducao, quantidadeProduzida, folhaDePagamento;
     
     public Operario(String nome, String dataNascimento, float salario){
         super(nome, dataNascimento, salario);
@@ -27,5 +27,8 @@ public class Operario extends Funcionario{
         this.quantidadeProduzida = quantidadeProduzida;
     }
     
-    
+    public float calculaSalario(){
+        this.folhaDePagamento = super.getSalario() + this.getQuantidadeProduzida() * this.getValorPorProducao();
+        return this.folhaDePagamento;
+    }
 }

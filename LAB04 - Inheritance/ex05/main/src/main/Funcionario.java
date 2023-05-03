@@ -42,4 +42,8 @@ public class Funcionario{
     public String toString() {
         return "funcionario{" + "nome=" + nome + ", dataNascimento=" + dataNascimento + ", salario=" + salario + '}';
     }
+    
+    public float calculoDoSalario(){
+        return this.salario;
+    }
 }

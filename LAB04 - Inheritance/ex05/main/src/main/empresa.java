@@ -1,5 +1,4 @@
 package main;
-import java.util.Scanner;
 /**
  *
  * @author Joshua
@@ -7,17 +6,14 @@ import java.util.Scanner;
 public class empresa {
 
     public static void main(String[] args) {
-        int n = 0;
         Funcionario[] funcionarios;
         
-        Scanner sc = new Scanner(System.in);
-        
         System.out.println("Quantos funcionarios existe: ");
-        n = sc.nextInt();
         
         funcionarios = new Funcionario[20];
         
         funcionarios[0] = new Chefe("Geraldo", "10/01/1995", 5000F);
+        ((Chefe) funcionarios[0]).setPredefinido(7000F);
         
         funcionarios[1] = new Vendedor("Jose", "10/01/1995", 1200F);
         funcionarios[2] = new Vendedor("Maria", "10/01/1995", 1200F);
@@ -43,10 +39,12 @@ public class empresa {
         funcionarios[16] = new Horistas("Yuumi", "10/01/1995", 1200F);
         funcionarios[17] = new Horistas("Sona", "10/01/1995", 1200F);
         
-        for(Funcionario i : funcionarios)
-            if(i != null)
+        for(Funcionario i : funcionarios){
+            if(i != null){
                 System.out.println(i.toString());
-        
+                System.out.println(i.calculoDoSalario());
+            }
+        }
         
         for(Funcionario i : funcionarios)
             i = null;

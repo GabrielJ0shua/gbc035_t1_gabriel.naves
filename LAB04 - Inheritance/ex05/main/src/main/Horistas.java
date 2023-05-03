@@ -5,7 +5,7 @@ package main;
  * @author Joshua
  */
 public class Horistas extends Funcionario{
-    private float  valorPorHora, totalDeHorasTrabalhadas;
+    private float  valorPorHora, totalDeHorasTrabalhadas, folhaDePagamento;
     
     public Horistas(String nome, String dataNascimento, float salario){
         super(nome, dataNascimento, salario);
@@ -27,5 +27,8 @@ public class Horistas extends Funcionario{
         this.totalDeHorasTrabalhadas = totalDeHorasTrabalhadas;
     }
     
-    
+    public float calculaSalario(){
+        this.folhaDePagamento = super.getSalario() + this.getValorPorHora() * this.getTotalDeHorasTrabalhadas();
+        return this.folhaDePagamento;
+    }
 }

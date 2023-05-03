@@ -5,18 +5,10 @@ package main;
  * @author Joshua
  */
 public class Chefe extends Funcionario{
-    private float salarioFixo, predefinido;
+    private float predefinido, folhaDePagamento;
     
     public Chefe(String nome, String dataNascimento, float salario){
         super(nome, dataNascimento, salario);
-    }
-
-    public float getSalarioFixo() {
-        return salarioFixo;
-    }
-
-    public void setSalarioFixo(float salarioFixo) {
-        this.salarioFixo = salarioFixo;
     }
 
     public float getPredefinido() {
@@ -27,5 +19,8 @@ public class Chefe extends Funcionario{
         this.predefinido = predefinido;
     }
     
-    
+    public float calculaSalario(){
+        this.folhaDePagamento = super.getSalario() + this.getPredefinido();
+        return this.folhaDePagamento;
+    }
 }
