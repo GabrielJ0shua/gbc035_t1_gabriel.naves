@@ -13,10 +13,10 @@ public abstract class Contato {
     }
 
     public void imprimirBasico(){
-        System.out.printf("Apelido: %s \n", this.apelido);
-        System.out.printf("Nome: %s \n", this.nome);
-        System.out.printf("Email: %s \n", this.email);
-        System.out.printf("Aniversario: %s \n", this.aniversario);
+        System.out.println("Apelido: "+ this.apelido);
+        System.out.println("Nome: "+ this.nome);
+        System.out.println("Email: "+ this.email);
+        System.out.println("Aniversario: "+ this.aniversario);
     }
 
     public abstract void imprimirContato();
